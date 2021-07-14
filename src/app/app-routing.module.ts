@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'liste-sessions',
+    loadChildren: () => import('./liste-sessions/liste-sessions.module').then( m => m.ListeSessionsPageModule)
+  },
 ];
 
 @NgModule({

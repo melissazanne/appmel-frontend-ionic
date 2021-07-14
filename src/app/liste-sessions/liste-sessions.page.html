@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>APPmel</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <ion-label>
+      <br>
+      <h1><b>LISTE DES SESSIONS {{ name }} </b></h1>
+    </ion-label>
+
+    <ion-button (click)="goToHomePage()">Go to class list</ion-button>
+    <ion-button (click)="runHttpForSessions()">Load sessions list</ion-button>
+    <ion-list *ngFor="let session of sessions">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>{{ session.nom }}</ion-card-title>
+          <ion-card-subtitle>Debut : {{ session.debut }}</ion-card-subtitle>
+          <ion-card-subtitle>Fin : {{ session.fin }}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+
+    </ion-list>
+
+  </div>
+</ion-content>

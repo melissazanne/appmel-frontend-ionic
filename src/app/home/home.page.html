@@ -1,20 +1,27 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      APPmel
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-label>
+      <br>
+      <h1><b>LISTE DES CLASSES</b></h1>
+    </ion-label>
+    <ion-button (click)="runHttp()">Load class list</ion-button>
+    <ion-list *ngFor="let classe of classes">
+      <ion-item button (click)="goToSessionsPage(classe.id, classe.nom)">
+        <ion-avatar slot="start">
+          <img src="https://img.icons8.com/bubbles/2x/classroom.png">
+        </ion-avatar>
+        <h4>{{ classe.nom }}</h4>
+      </ion-item>
+    </ion-list>
+
   </div>
 </ion-content>
